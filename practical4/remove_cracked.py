@@ -8,8 +8,8 @@ import os
 
 curr_dir = os.getcwd()
 
-hash_file = 'C:\\git\\Scalable-Computing-Assignments\\practical4\\MD5.hashes'
-pot_file = 'C:\\Users\\kiera\\Documents\\MAI\\Scalable Computing\\Assignments\\practical4\\sub5.potfile'
+hash_file = 'C:\\git\\Scalable-Computing-Assignments\\practical4\\SHA512.hashes'
+pot_file = 'C:\\Users\\kiera\\Documents\\MAI\\Scalable Computing\\Assignments\\practical4\\submission6.broken'
 
 def removeEndLn(ls = []):
     for i, x in enumerate(ls):

@@ -2,8 +2,9 @@
 """
 @author: kiera
 """
+import os
 
-hash_file = str(input("DES potfile loc: "))
+hash_file = str(os.getcwd() + '\\' +input("DES potfile loc: "))
 
 def removeEndLn(ls = []):
     for i, x in enumerate(ls):
