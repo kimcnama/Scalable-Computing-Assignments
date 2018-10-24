@@ -1,0 +1,23 @@
+Use following commands to upload ultimate.txt wordlist from local dir to instance to crack remaining passwords
+
+pscp -i private-keys-m-c0739301-77a1-49f2-966b-71fe37e291e9-0.ppk ultimate.txt ubuntu@ec2-52-51-119-123.eu-west-1.compute.amazonaws.com:a
+
+pscp -i private-keys-m-6f685431-56e1-4074-a500-03ad71594f5d-0.ppk ultimate.txt ubuntu@ec2-54-154-9-139.eu-west-1.compute.amazonaws.com:a
+
+pscp -i private-keys-m-c0739301-77a1-49f2-966b-71fe37e291e9-0.ppk rockyouext.txt ubuntu@ec2-52-51-119-123.eu-west-1.compute.amazonaws.com:a
+
+pscp -i private-keys-m-6f685431-56e1-4074-a500-03ad71594f5d-0.ppk rockyouext.txt ubuntu@ec2-54-154-9-139.eu-west-1.compute.amazonaws.com:a
+
+~/.hashcat/hashcat.potfile
+
+--Use optimizer flag -O
+
+Used NVIDIA Tesla v100 GPU on google cloud to scale on SHAs,
+Runtime decreased from 1 day (with rockyou) to 4 hours.
+
+hashcat -m 1800 -a 0 .hashes .txt -O
+
+Checked hashes left to solve against other peoples potfiles and no matches.
+
+PBK - Ran dictionary of 5 characters or less dictionary, noticed pattern of all lower case letters only. Then split out work between 3 CPUs. 
+1 CPU compute 5 chars or less, 1 computes 6 chars and 1 computes 7 chars. (Scaling)
