@@ -1,0 +1,31 @@
+sudo apt-get install linux-headers-`uname -r`;
+sudo apt update;
+sudo apt upgrade -y;
+sudo apt-get install build-essential -y;
+sudo apt-get install linux-image-extra-virtual -y;
+wget http://us.download.nvidia.com/tesla/396.44/NVIDIA-Linux-x86_64-396.44.run;
+chmod a+x ./NVIDIA-Linux-x86_64-396.44.run;
+sudo ./NVIDIA-Linux-x86_64-396.44.run;
+
+
+sudo apt install hashcat -y;
+hashcat -I;
+
+mkdir -p ~/src;
+sudo apt-get install build-essential libssl-dev git zlib1g-dev -y;
+sudo apt-get install yasm libgmp-dev libpcap-dev pkg-config libbz2-dev -y;
+sudo apt-get install nvidia-opencl-dev -y;
+sudo apt-get install libopenmpi-dev openmpi-bin -y;
+sudo apt-get install cmake bison flex libicu-dev -y;
+cd ~/src;
+git clone --recursive https://github.com/teeshop/rexgen.git;
+cd rexgen;
+./install.sh;
+cd src;
+git clone git://github.com/magnumripper/JohnTheRipper -b bleeding-jumbo john;
+cd ~/src/rexgen/src/john/src/;
+./configure && make -s clean && make -sj4;
+
+
+
+

@@ -15,9 +15,16 @@ pscp -i private-keys-m-6f685431-56e1-4074-a500-03ad71594f5d-0.ppk rockyouext.txt
 Used NVIDIA Tesla v100 GPU on google cloud to scale on SHAs,
 Runtime decreased from 1 day (with rockyou) to 4 hours.
 
+hashcat -m 500 -a 0 .hashes .txt -O 
 hashcat -m 1800 -a 0 .hashes .txt -O
 
 Checked hashes left to solve against other peoples potfiles and no matches.
 
 PBK - Ran dictionary of 5 characters or less dictionary, noticed pattern of all lower case letters only. Then split out work between 3 CPUs. 
 1 CPU compute 5 chars or less, 1 computes 6 chars and 1 computes 7 chars. (Scaling)
+
+*********Level 2 inferno balls******************
+./john level2pbk.hashes -w=level2wordlist.txt --format=PBKDF2-HMAC-SHA256-opencl
+
+hashcat -a 0 -m 15100 .hashes .list -O -w3
+
