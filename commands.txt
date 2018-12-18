@@ -28,3 +28,23 @@ PBK - Ran dictionary of 5 characters or less dictionary, noticed pattern of all 
 
 hashcat -a 0 -m 15100 .hashes .list -O -w3
 
+************Level 3********************
+See level 3 in google drives for masks
+
+
+************level 4 CEWL******************
+create wordlist by:
+cewl -w cewl_tcd_d2_l3.txt -d 2 -m 3 https://www.tcd.ie
+
+sort out unique lines in file:
+sort file1.txt | uniq
+
+**********level 6 rockyou *********************
+John check GPUs
+./john --list=opencl-devices
+
+*********level 7 key presses******************
+sed 's/"//g' l7.hashes > l7v2.hashes  --removes all " from text
+sort l7v3.hashes > l7v3.hashes   --sort alphabetically
+
+./john --list=formats    --view formats

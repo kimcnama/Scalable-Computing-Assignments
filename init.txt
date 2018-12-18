@@ -8,6 +8,7 @@ chmod a+x ./NVIDIA-Linux-x86_64-396.44.run;
 sudo ./NVIDIA-Linux-x86_64-396.44.run;
 
 
+
 sudo apt install hashcat -y;
 hashcat -I;
 
@@ -23,9 +24,7 @@ cd rexgen;
 ./install.sh;
 cd src;
 git clone git://github.com/magnumripper/JohnTheRipper -b bleeding-jumbo john;
-cd ~/src/rexgen/src/john/src/;
+v
 ./configure && make -s clean && make -sj4;
-
-
 
 
